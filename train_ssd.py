@@ -232,10 +232,18 @@ if __name__ == '__main__':
             store_labels(label_file, dataset.class_names)
             logging.info(dataset)
             num_classes = len(dataset.class_names)
-
+        elif args.dataset_type == 'pedestrian':
+            dataset = PedestrianDataset(dataset_path, transform=train_transform,
+                                 target_transform=target_transform)
+            label_file = os.path.join(args.checkpoint_folder, "pedestrian-labels.txt") # This is made, don't need to make myself
+            store_labels(label_file, dataset.class_names)
+            num_classes = len(dataset.class_names)
+            exit()
         else:
             raise ValueError(f"Dataset type {args.dataset_type} is not supported.")
         datasets.append(dataset)
+
+
     logging.info(f"Stored labels into file {label_file}.")
     train_dataset = ConcatDataset(datasets)
     logging.info("Train dataset size: {}".format(len(train_dataset)))
@@ -259,6 +267,11 @@ if __name__ == '__main__':
                                         transform=test_transform, target_transform=target_transform,
                                         dataset_type="test")
         logging.info(val_dataset)
+    elif args.dataset_type == 'pedestrian':
+        print('validation set pedestrian: ', args.validation_dataset)
+        val_dataset = PedestrianDataset(args.validation_dataset, transform=test_transform,
+                                 target_transform=target_transform, is_test=True)
+
     logging.info("validation dataset size: {}".format(len(val_dataset)))
 
     val_loader = DataLoader(val_dataset, args.batch_size,
