@@ -19,6 +19,7 @@ from vision.datasets.voc_dataset import VOCDataset
 from vision.datasets.coco_dataset import COCODataset
 from vision.datasets.berkeley_dataset import BDDDataset
 from vision.datasets.open_images import OpenImagesDataset
+from vision.datasets.pedestrian_dataset import PedestrianDataset
 from vision.nn.multibox_loss import MultiboxLoss
 from vision.ssd.config import vgg_ssd_config
 from vision.ssd.config import mobilenetv1_ssd_config
