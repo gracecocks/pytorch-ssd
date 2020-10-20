@@ -237,7 +237,7 @@ if __name__ == '__main__':
             dataset = PedestrianDataset(dataset_path, transform=train_transform,
                                  target_transform=target_transform)
             label_file = os.path.join(args.checkpoint_folder, "pedestrian-labels.txt") # This is made, don't need to make myself
-            store_labels(label_file, dataset.class_names)
+            write_labels(label_file, dataset.class_names)
             num_classes = len(dataset.class_names)
             exit()
         else:

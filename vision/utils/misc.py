@@ -43,3 +43,7 @@ def freeze_net_layers(net):
 def store_labels(path, labels):
     with open(path, "w") as f:
         f.write("\n".join(labels))
+
+def write_labels(path, labels):
+    with open(path, "w") as f:
+        f.write(labels)
