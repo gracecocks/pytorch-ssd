@@ -239,7 +239,6 @@ if __name__ == '__main__':
             label_file = os.path.join(args.checkpoint_folder, "pedestrian-labels.txt") # This is made, don't need to make myself
             write_labels(label_file, dataset.class_names)
             num_classes = len(dataset.class_names)
-            exit()
         else:
             raise ValueError(f"Dataset type {args.dataset_type} is not supported.")
         datasets.append(dataset)
