@@ -26,7 +26,8 @@ class PedestrianDataset:
         logging.info("No labels file, using default Pedestrian classes.")
         self.class_names = ('Pedestrian')
 
-        self.class_dict = {class_name: i for i, class_name in enumerate(self.class_names)}
+        # self.class_dict = {class_name: i for i, class_name in enumerate(self.class_names)}
+        self.class_dict = {self.class_names : 0}
 
     def __getitem__(self, index):
         image_id = self.ids[index]
