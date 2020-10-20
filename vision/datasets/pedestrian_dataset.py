@@ -17,7 +17,7 @@ class PedestrianDataset:
         self.transform = transform
         self.target_transform = target_transform
         if is_test:
-            image_sets_file = self.root / "ImageSets/Main/val.txt"
+            image_sets_file = self.root / "ImageSets/Main/test.txt"
         else:
             image_sets_file = self.root / "ImageSets/Main/train.txt"
         self.ids = PedestrianDataset._read_image_ids(image_sets_file)
