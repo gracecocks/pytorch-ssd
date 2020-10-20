@@ -20,7 +20,7 @@ class PedestrianDataset:
             image_sets_file = self.root / "ImageSets/Main/val.txt"
         else:
             image_sets_file = self.root / "ImageSets/Main/train.txt"
-        self.ids = VOCDataset._read_image_ids(image_sets_file)
+        self.ids = PedestrianDataset._read_image_ids(image_sets_file)
         self.keep_difficult = keep_difficult
 
         logging.info("No labels file, using default Pedestrian classes.")
