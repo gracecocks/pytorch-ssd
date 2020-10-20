@@ -8,7 +8,7 @@ import torch
 from torch.utils.data import DataLoader, ConcatDataset
 from torch.optim.lr_scheduler import CosineAnnealingLR, MultiStepLR
 
-from vision.utils.misc import str2bool, Timer, freeze_net_layers, store_labels
+from vision.utils.misc import str2bool, Timer, freeze_net_layers, store_labels, write_labels
 from vision.ssd.ssd import MatchPrior
 from vision.ssd.vgg_ssd import create_vgg_ssd
 from vision.ssd.mobilenetv1_ssd import create_mobilenetv1_ssd
